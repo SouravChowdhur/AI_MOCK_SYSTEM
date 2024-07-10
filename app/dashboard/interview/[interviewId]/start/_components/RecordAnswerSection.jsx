@@ -56,6 +56,21 @@ function RecordAnswerSection({mockInterviewQuestion, activeIndexQuestion, interv
             startSpeechToText()
         }
     }
+    const SaveUserAnswer=()=>{
+       /*if(isRecording)
+        {
+            stopSpeechToText();
+            if(userAnswer?.length<10){
+                toast('Error while saving your answer')
+                return;
+            }
+            const feedbackPrompt="Question:"+mockInterviewQuestion[activeIndexQuestion]?.question+", User Answer:"+userAnswer+",Depends on question and user answer for given  question"+"please give us rating for answer and feedback if any in just"+"in just 3 to 5 lines in JSON format with rating field and feedback field"
+        }
+        else{
+            startSpeechToText();
+        }*/
+
+        }
 
     const UpdateUserAnswer = async()=>{
         console.log(userAnswer)
