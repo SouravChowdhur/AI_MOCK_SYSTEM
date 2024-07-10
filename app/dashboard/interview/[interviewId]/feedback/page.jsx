@@ -27,10 +27,13 @@ function Feedback ({params}) {
   }
   return (
     <div className='p-10'>
-          <h2 className='text-3xl font-bold text-green-500'>Congratulations!</h2>
+          
+          {feedbackList?.length==0?
+          <h2 className='font-bold text-xl text-yellow-300'>No Feedback Found</h2>:
+           <>
+           <h2 className='text-3xl font-bold text-green-500'>Congratulations!</h2>
           <h2 className='font-bold text-2xl text-white'>Here is your report Card</h2>
           <h2 className='text-yellow-300 text-lg my-3'>Your overall interview grade: <strong>7/10</strong></h2>
-
           <h2 className='text-sm text-white' >Find below your answers, correct answers and feedback for furthur improvement</h2>
           {feedbackList&&feedbackList.map((item, index)=>(
                  <Collapsible key={index} className='mt-7'>
@@ -53,7 +56,8 @@ function Feedback ({params}) {
                </Collapsible>
                
           ))}
-          <Button onClick={()=>router.replace("/dashboard")}>Go Home</Button>
+          </>}
+          <Button className="bg-gray-400 text-yellow-300 font-bold  hover:bg-yellow-300 hover:text-gray-600" onClick={()=>router.replace("/dashboard")}>Go Home</Button>
     </div>
   )
 }
